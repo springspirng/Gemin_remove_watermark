@@ -1,18 +1,15 @@
+原始版本來自凱文大叔AI程式設計教室
+https://www.youtube.com/watch?v=wQDd0vq0I8I
+凱文大叔免費去(換)水印工具:
+https://kevintsai1202.github.io/GeminiWatermarkRemove/
+
 # Gemini Watermark Remover
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[English](README.md) | [繁體中文](README_zh-TW.md) | [简体中文](README_zh-CN.md) | [日本語](README_ja.md) | [한국어](README_ko.md)
+[English](README.md) | [正體中文](README_zh-TW.md) | [殘體中文](README_zh-CN.md) | [日本語](README_ja.md) | [한국어](README_ko.md)
 
 這是一個強大的網頁工具，專門設計用於去除由 Google Gemini 生成圖片中的浮水印。此工具完全在瀏覽器端運行，無需將圖片上傳至伺服器，確保您的隱私安全。
-
-## 🖼️ 實際演示
-
-<div align="center">
-  <img src="assets/demo_preview_1.png" alt="實際演示 1" width="45%">
-  <img src="assets/demo_preview_2.png" alt="實際演示 2" width="45%">
-</div>
-
 
 ## ✨ 主要功能
 
@@ -29,7 +26,7 @@
 - **🖥️ 桌面應用程式**：提供 Tauri 原生桌面應用，離線使用、效能更佳。
 - **📋 剪貼簿貼上**：支援直接貼上 (Ctrl+V) 截圖或圖片進行處理。
 - **📦 批次 ZIP 下載**：下載多張圖片時自動打包為 ZIP 檔案，方便整理。
-- **🌐 多國語系支援**：介面支援英文、繁體中文、簡體中文、日文及韓文。
+- **🌐 多國語系支援**：介面支援英文、正體中文、殘體中文、日文及韓文。
 
 ## 🛠️ 技術原理
 
@@ -49,11 +46,11 @@
 
 1. **複製專案**：
    ```bash
-   git clone https://github.com/kevintsai1202/GeminiWatermarkRemove.git
+   git clone https://github.com/springspirng/Gemin_remove_watermark.git
    ```
 2. **進入目錄**：
    ```bash
-   cd GeminiWatermarkRemove
+   cd Gemin_remove_watermark
    ```
 3. **執行**：
    直接用瀏覽器打開 `index.html` 即可使用。
@@ -74,18 +71,14 @@
 - **原生效能**：透過原生 API 提供更快的檔案處理
 - **獨立運行**：無需瀏覽器即可執行
 
-### 下載
-> 即將推出 - 請至 [Releases](https://github.com/kevintsai1202/GeminiWatermarkRemove/releases) 頁面下載安裝包。
-
 ### 從原始碼建置
 ```bash
 # 前置需求：Rust、Node.js
 cargo install tauri-cli
 
 # 複製並建置
-git clone https://github.com/kevintsai1202/GeminiWatermarkRemove.git
-cd GeminiWatermarkRemove
-git checkout feature/tauri-app
+git clone https://github.com/springspirng/Gemin_remove_watermark.git
+cd Gemin_remove_watermark
 
 # 開發模式
 cargo tauri dev
