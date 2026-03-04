@@ -129,6 +129,15 @@ async function init() {
     // Init Localization first
     Localization.init();
 
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registered', reg))
+                .catch(err => console.error('Service Worker registration failed', err));
+        });
+    }
+
     // Setup Worker Listener
     STATE.worker.onmessage = (e) => {
         const { type, payload, id } = e.data;
@@ -160,8 +169,6 @@ async function init() {
             payload: STATE.masks
         });
 
-        // Fetch GitHub Stars
-        fetchGitHubStars();
 
         // Init Theme
         ThemeManager.init();
@@ -235,23 +242,6 @@ function loadMask(url, type) {
     });
 }
 
-function fetchGitHubStars() {
-    const starCountElement = document.getElementById('githubStarCount');
-    if (!starCountElement) return;
-
-    fetch('https://api.github.com/repos/kevintsai1202/GeminiWatermarkRemove')
-        .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.json();
-        })
-        .then(data => {
-            starCountElement.textContent = data.stargazers_count;
-        })
-        .catch(error => {
-            console.error('Failed to fetch GitHub stars:', error);
-            starCountElement.textContent = '';
-        });
-}
 
 
 // =============================================================================
